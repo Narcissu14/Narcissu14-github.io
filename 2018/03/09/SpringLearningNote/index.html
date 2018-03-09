@@ -201,12 +201,13 @@
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="Spring学习笔记"><a href="#Spring学习笔记" class="headerlink" title="Spring学习笔记"></a>Spring学习笔记</h1><p>使用框架的基本思想是为了将程序的各个部分进行解耦，并解决或避免一些原生编程中的问题</p>
+        <h1 id="Spring学习笔记"><a href="#Spring学习笔记" class="headerlink" title="Spring学习笔记"></a>Spring学习笔记</h1><p>记笔记的确是个好习惯，能够把学习过程中自己的想法和思考记录下来。<br>所以，这回学习Spring的时候我就边学编写了这篇笔记，有些地方可能会有不足之处，还望指正！</p>
+<h2 id="关于使用框架"><a href="#关于使用框架" class="headerlink" title="关于使用框架"></a>关于使用框架</h2><p>使用框架的基本思想是为了将程序的各个部分进行解耦，并解决或避免一些原生编程中的问题</p>
 <h2 id="IOC-控制反转-和DI-依赖注入"><a href="#IOC-控制反转-和DI-依赖注入" class="headerlink" title="IOC(控制反转)和DI(依赖注入)"></a>IOC(控制反转)和DI(依赖注入)</h2><h3 id="配置文件方式"><a href="#配置文件方式" class="headerlink" title="配置文件方式"></a>配置文件方式</h3><p>使用 <code>&lt;bean&gt;</code> 标签配置对象，在 <code>&lt;bean&gt;</code> 的内部使用 <code>&lt;property&gt;</code> 标签将数据注入对象，<br>对象的注入支持复杂对象（例如List、Map等）</p>
 <h3 id="注解方式"><a href="#注解方式" class="headerlink" title="注解方式"></a>注解方式</h3><p>Spring支持使用注解方式来替代配置文件。首先需要在配置文件中写上<br><code>&lt;context:component-scan base-package=&quot;被扫描的文件路径&quot;/&gt;</code> 开启扫描。<br>有两种方式对对象进行创建</p>
 <ul>
-<li><code>@Autowired</code></li>
-<li><code>@Resource(value=&quot;注入对象name&quot;)</code><br> 等效于配置文件中的 <code>&lt;property name=&quot;xxx&quot; ref=&quot;注入对象name&quot;&gt;</code></li>
+<li>@Autowired</li>
+<li>@Resource(value=”注入对象name”)<br> 等效于配置文件中的 <code>&lt;property name=&quot;xxx&quot; ref=&quot;注入对象name&quot;&gt;</code></li>
 </ul>
 <h3 id="混合使用"><a href="#混合使用" class="headerlink" title="混合使用"></a>混合使用</h3><p>配置文件和注解方式是可以混合使用的</p>
 <h2 id="AOP-面向切面编程"><a href="#AOP-面向切面编程" class="headerlink" title="AOP(面向切面编程)"></a>AOP(面向切面编程)</h2><p>即不通过修改源代码实现功能扩展，横向机制，通过代理类实现</p>
@@ -229,12 +230,16 @@
 </ul>
 <h3 id="AspectJ"><a href="#AspectJ" class="headerlink" title="AspectJ"></a>AspectJ</h3><p>Spring中的AOP操作由AspectJ实现，有以下两种方案<br><br>注意在IDEA里建的Spring项目，是不会自动下载导入<code>aspectjweaver-1.8.13.jar</code><br>这个依赖的，需要手动导入</p>
 <h4 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h4><p>每次读取xml文件都需要花费较长时间<code>new ClassPathXmlApplicationContext(&quot;xxx.xml&quot;);</code>。<br>所以，通过服务器启动时加载配置文件的方式提升性能。<br>底层实现则是使用监听器和ServletContext对象，Spring已经封装好了监听器，只需要进行配置即可。<br>需要导入Spring-web.jar<br>在web.xml中进行配置：</p>
-<p>`</p>
-<p><listener><br>    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class><br></listener><br>`</p>
-<p>同时此处一般要指定Spring配置文件的位置，否则将会是默认：</p>
-<p>`</p>
-<p><context-param><br>    <param-name>contextConfigLocation</param-name><br>    <!--默认包根路径下--><br>    <param-value>classpath:配置文件.xml</param-value><br></context-param><br>`</p>
-<h4 id="表达式配置切入点-进行增强"><a href="#表达式配置切入点-进行增强" class="headerlink" title="表达式配置切入点 进行增强"></a>表达式配置切入点 进行增强</h4><p>表达式：execution(&lt;访问修饰符&gt;?&lt;返回类型&gt;&lt;方法名&gt;(&lt;参数&gt;)&lt;异常&gt;)</p>
+<pre><code>&lt;listener&gt;
+    &lt;listener-class&gt;org.springframework.web.context.ContextLoaderListener&lt;/listener-class&gt;
+&lt;/listener&gt;
+</code></pre><p>同时此处一般要指定Spring配置文件的位置，否则将会是默认：</p>
+<pre><code>&lt;context-param&gt;
+    &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+    &lt;!--默认包根路径下--&gt;
+    &lt;param-value&gt;classpath:配置文件.xml&lt;/param-value&gt;
+&lt;/context-param&gt;
+</code></pre><h4 id="表达式配置切入点-进行增强"><a href="#表达式配置切入点-进行增强" class="headerlink" title="表达式配置切入点 进行增强"></a>表达式配置切入点 进行增强</h4><p>表达式：execution(&lt;访问修饰符&gt;?&lt;返回类型&gt;&lt;方法名&gt;(&lt;参数&gt;)&lt;异常&gt;)</p>
 <p>示例：</p>
 <ul>
 <li>execution(* com.narcissu14.testspring.print(..))<br><br>指代指定路径包名下方法的，任意访问修饰符的方法</li>
@@ -243,19 +248,21 @@
 <li>execution(<em> com.narcissu14.testspring.get</em>(..))<br><br>指代指定路径包名下名称以<code>get</code>为前缀的，任意访问修饰符的方法</li>
 </ul>
 <p>步骤：</p>
-<p>首先创建对象及其类(Java的代码部分此处不贴出了)<br><code>&lt;bean id=&quot;aopBook&quot; class=&quot;com.narcissu14.testspring.entity.AopBook&quot;/&gt;
-    &lt;bean id=&quot;aopBookEnhance&quot; class=&quot;com.narcissu14.testspring.entity.AopBookEnhance&quot;/&gt;</code></p>
-<p>对切入点和增强进行配置<br><code>&lt;!--配置AOP操作--&gt;
-    &lt;aop:config&gt;
-        &lt;!--配置切入点--&gt;
-        &lt;aop:pointcut expression=&quot;execution(* com.narcissu14.testspring.entity.AopBook.print())&quot; id=&quot;aopBook-print&quot;/&gt;
-        &lt;!--配置切面，将增强织入--&gt;
-        &lt;aop:aspect ref=&quot;aopBookEnhance&quot;&gt;
-            &lt;aop:before method=&quot;enhanceBefore&quot; pointcut-ref=&quot;aopBook-print&quot;/&gt;
-            &lt;aop:around method=&quot;enhanceAround&quot; pointcut-ref=&quot;aopBook-print&quot;/&gt;
-        &lt;/aop:aspect&gt;
-    &lt;/aop:config&gt;</code></p>
-<h4 id="注解设定切入点-进行增强"><a href="#注解设定切入点-进行增强" class="headerlink" title="注解设定切入点 进行增强"></a>注解设定切入点 进行增强</h4><p>步骤：</p>
+<p>首先创建对象及其类(Java的代码部分此处不贴出了)</p>
+<pre><code>&lt;bean id=&quot;aopBook&quot; class=&quot;com.narcissu14.testspring.entity.AopBook&quot;/&gt;
+&lt;bean id=&quot;aopBookEnhance&quot; class=&quot;com.narcissu14.testspring.entity.AopBookEnhance&quot;/&gt;
+</code></pre><p>对切入点和增强进行配置</p>
+<pre><code>&lt;!--配置AOP操作--&gt;
+&lt;aop:config&gt;
+    &lt;!--配置切入点--&gt;
+    &lt;aop:pointcut expression=&quot;execution(* com.narcissu14.testspring.entity.AopBook.print())&quot; id=&quot;aopBook-print&quot;/&gt;
+    &lt;!--配置切面，将增强织入--&gt;
+    &lt;aop:aspect ref=&quot;aopBookEnhance&quot;&gt;
+        &lt;aop:before method=&quot;enhanceBefore&quot; pointcut-ref=&quot;aopBook-print&quot;/&gt;
+        &lt;aop:around method=&quot;enhanceAround&quot; pointcut-ref=&quot;aopBook-print&quot;/&gt;
+    &lt;/aop:aspect&gt;
+&lt;/aop:config&gt;
+</code></pre><h4 id="注解设定切入点-进行增强"><a href="#注解设定切入点-进行增强" class="headerlink" title="注解设定切入点 进行增强"></a>注解设定切入点 进行增强</h4><p>步骤：</p>
 <ol>
 <li>首先创建bean配置，这个同上</li>
 <li>增加<code>&lt;aop:aspectj-autoproxy/&gt;</code>开启自动代理</li>
@@ -268,9 +275,9 @@
 <li>@After：最终通知</li>
 </ul>
 </li>
-<li>在通知类型之后加上表达式以指向需要被增强的类<br><br>例如：<br><code>@Before(value = &quot;execution(* com.narcissu14.testspring.entity.AopBook.print())&quot;)</code><h3 id="JDBCTemplate"><a href="#JDBCTemplate" class="headerlink" title="JDBCTemplate"></a>JDBCTemplate</h3>是对JDBC的封装，使用前需要先创建JdbcTemplate对象</li>
+<li>在通知类型之后加上表达式以指向需要被增强的类<br><br>例如：<br> @Before(value = “execution(* com.narcissu14.testspring.entity.AopBook.print())”)</li>
 </ol>
-<p>`</p>
+<h3 id="JDBCTemplate"><a href="#JDBCTemplate" class="headerlink" title="JDBCTemplate"></a>JDBCTemplate</h3><p>是对JDBC的封装，使用前需要先创建JdbcTemplate对象</p>
 <pre><code>//设置数据库信息
  DriverManagerDataSource dataSource = new DriverManagerDataSource();
  dataSource.setDriverClassName(&quot;com.mysql.jdbc.Driver&quot;);
@@ -280,7 +287,7 @@
 
  //创建JdbcTemplate对象，设置数据源
  JDBC_TEMPLATE = new JdbcTemplate(dataSource);
-</code></pre><p>`<br>之后可以通过JDBC_TEMPLATE 来进行crud操作</p>
+</code></pre><p>之后可以通过JDBC_TEMPLATE 来进行crud操作</p>
 <h4 id="关于查询"><a href="#关于查询" class="headerlink" title="关于查询"></a>关于查询</h4><ul>
 <li><p>查询并获取对象，可以使用<code>JDBC_TEMPLATE.queryForObject(...)</code><br>  该方法返回一个指定类型的对象<br>  其中的”RowMapper”类型参数需要手动进行实现，主要实现</p>
 <ol>
@@ -289,14 +296,15 @@
 </ol>
 </li>
 </ul>
-<h3 id="Spring中配置C3P0连接池"><a href="#Spring中配置C3P0连接池" class="headerlink" title="Spring中配置C3P0连接池"></a>Spring中配置C3P0连接池</h3><p>实际上就是利用IOC，使用配置文件的方式创建并注入对象。<br>这里再次注意，默认情况下，创建对象是Singleton，即单例的。<br>例：<br><code>&lt;!--配置C3P0连接池--&gt;
-     &lt;bean id=&quot;c3p0&quot; class=&quot;com.mchange.v2.c3p0.ComboPooledDataSource&quot;&gt;
-         &lt;property name=&quot;driverClass&quot; value=&quot;com.mysql.jdbc.Driver&quot;/&gt;
-         &lt;property name=&quot;jdbcUrl&quot; value=&quot;jdbc:mysql:///spring_test&quot;/&gt;
-         &lt;property name=&quot;user&quot; value=&quot;root&quot;/&gt;
-         &lt;property name=&quot;password&quot; value=&quot;&quot;/&gt;
-     &lt;/bean&gt;</code></p>
-<h3 id="Spring的事务管理"><a href="#Spring的事务管理" class="headerlink" title="Spring的事务管理"></a>Spring的事务管理</h3><ul>
+<h3 id="Spring中配置C3P0连接池"><a href="#Spring中配置C3P0连接池" class="headerlink" title="Spring中配置C3P0连接池"></a>Spring中配置C3P0连接池</h3><p>实际上就是利用IOC，使用配置文件的方式创建并注入对象。<br>这里再次注意，默认情况下，创建对象是Singleton，即单例的。<br>例：</p>
+<pre><code>&lt;!--配置C3P0连接池--&gt;
+ &lt;bean id=&quot;c3p0&quot; class=&quot;com.mchange.v2.c3p0.ComboPooledDataSource&quot;&gt;
+     &lt;property name=&quot;driverClass&quot; value=&quot;com.mysql.jdbc.Driver&quot;/&gt;
+     &lt;property name=&quot;jdbcUrl&quot; value=&quot;jdbc:mysql:///spring_test&quot;/&gt;
+     &lt;property name=&quot;user&quot; value=&quot;root&quot;/&gt;
+     &lt;property name=&quot;password&quot; value=&quot;&quot;/&gt;
+ &lt;/bean&gt;
+</code></pre><h3 id="Spring的事务管理"><a href="#Spring的事务管理" class="headerlink" title="Spring的事务管理"></a>Spring的事务管理</h3><ul>
 <li>Spring中事务的两种管理方式：<ul>
 <li>编程式事务管理(一般不用)</li>
 <li>声明式事务管理<ul>
@@ -398,7 +406,7 @@
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Spring学习笔记"><span class="toc-number">1.</span> <span class="toc-text">Spring学习笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#IOC-控制反转-和DI-依赖注入"><span class="toc-number">1.1.</span> <span class="toc-text">IOC(控制反转)和DI(依赖注入)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#配置文件方式"><span class="toc-number">1.1.1.</span> <span class="toc-text">配置文件方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注解方式"><span class="toc-number">1.1.2.</span> <span class="toc-text">注解方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#混合使用"><span class="toc-number">1.1.3.</span> <span class="toc-text">混合使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AOP-面向切面编程"><span class="toc-number">1.2.</span> <span class="toc-text">AOP(面向切面编程)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概念"><span class="toc-number">1.2.1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AspectJ"><span class="toc-number">1.2.2.</span> <span class="toc-text">AspectJ</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#优化"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">优化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#表达式配置切入点-进行增强"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">表达式配置切入点 进行增强</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注解设定切入点-进行增强"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">注解设定切入点 进行增强</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JDBCTemplate"><span class="toc-number">1.2.3.</span> <span class="toc-text">JDBCTemplate</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#关于查询"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">关于查询</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring中配置C3P0连接池"><span class="toc-number">1.2.4.</span> <span class="toc-text">Spring中配置C3P0连接池</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring的事务管理"><span class="toc-number">1.2.5.</span> <span class="toc-text">Spring的事务管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设计思想"><span class="toc-number">1.2.6.</span> <span class="toc-text">设计思想</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Spring学习笔记"><span class="toc-number">1.</span> <span class="toc-text">Spring学习笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于使用框架"><span class="toc-number">1.1.</span> <span class="toc-text">关于使用框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IOC-控制反转-和DI-依赖注入"><span class="toc-number">1.2.</span> <span class="toc-text">IOC(控制反转)和DI(依赖注入)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#配置文件方式"><span class="toc-number">1.2.1.</span> <span class="toc-text">配置文件方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注解方式"><span class="toc-number">1.2.2.</span> <span class="toc-text">注解方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#混合使用"><span class="toc-number">1.2.3.</span> <span class="toc-text">混合使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AOP-面向切面编程"><span class="toc-number">1.3.</span> <span class="toc-text">AOP(面向切面编程)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概念"><span class="toc-number">1.3.1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AspectJ"><span class="toc-number">1.3.2.</span> <span class="toc-text">AspectJ</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#优化"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">优化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#表达式配置切入点-进行增强"><span class="toc-number">1.3.2.2.</span> <span class="toc-text">表达式配置切入点 进行增强</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注解设定切入点-进行增强"><span class="toc-number">1.3.2.3.</span> <span class="toc-text">注解设定切入点 进行增强</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JDBCTemplate"><span class="toc-number">1.3.3.</span> <span class="toc-text">JDBCTemplate</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#关于查询"><span class="toc-number">1.3.3.1.</span> <span class="toc-text">关于查询</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring中配置C3P0连接池"><span class="toc-number">1.3.4.</span> <span class="toc-text">Spring中配置C3P0连接池</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring的事务管理"><span class="toc-number">1.3.5.</span> <span class="toc-text">Spring的事务管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设计思想"><span class="toc-number">1.3.6.</span> <span class="toc-text">设计思想</span></a></li></ol></li></ol></li></ol>
     </div>
     
     <div class="back-top">&#xe639;</div>
