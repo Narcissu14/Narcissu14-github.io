@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+    <title>
+        
+        Narcissu14的博客
+        
+    </title>
+    <link rel="icon" href= /assets/favicon.ico>
+    <!-- TODO: 在font-face加载完毕后改变字体  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js"></script>
+    <!-- 提前加载place holder  -->
+    <style type="text/css">
+        @font-face {
+            font-family: 'Oswald-Regular';
+            src: url(/font/Oswald-Regular.ttf);
+        }
+    </style>
+    <style type="text/css">
+        .site-intro {
+            position: relative;
+            width: 100%;
+            height: 50vh;
+            overflow: hidden;
+            box-shadow: -0.1rem 0 0.5rem 0 rgba(0, 0, 0, 0.5);
+        }
+        .site-intro-placeholder {
+            position: absolute;
+            z-index: -2;
+            top: 0;
+            left: 0px;
+            width: calc(100% + 300px);
+            height: 100%;
+            background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+            background-position: center center;
+            transform: translate3d(-226px, 0, 0);
+            animation: gradient-move 2.5s ease-out 0s 1;
+        }
+        @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+</style>
+    <link rel="stylesheet" href = /css/style.css?v=20171227 />
+    <script src="//cdn.staticfile.org/jquery/3.2.1/jquery.min.js" defer></script>
+    
+    <script src="/scripts/main.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >Narcissu14的博客</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name"></a>
+            </div>
+    </div>
+    
+    <a class="home-link" href=/>Narcissu14的博客</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-img" style="background-image: url(http://oumn0o088.bkt.clouddn.com/post-bg.jpg)"></div>
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            [Untitled Post]
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <!-- 文章页标签  -->
+            
+            <script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "2", "bdMiniList": false, "bdPic": "", "bdStyle": "1", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = "/static/api/js/share.js"];</script>
+            <div class="post-intro-meta">
+                <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                <span class="post-intro-time">2018/03/09</span>
+                <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                    <span class="iconfont-archer">&#xe604;</span>
+                    <span id="busuanzi_value_page_pv"></span>
+                </span>
+                <span class="shareWrapper">
+                    <span class="iconfont-archer shareIcon">
+                        &#xe601;
+                    </span>
+                    <span class="bdsharebuttonbox">
+                        <a href="#" class="bds_more shareText" data-cmd="more">Share</a>
+                    </span>
+                </span>
+            </div>
+        
+    </div>
+</div>
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <script>
+            var browser = {
+                    versions: function () {
+                        var u = window.navigator.userAgent;
+                        return {
+                            userAgent: u,
+                            trident: u.indexOf('Trident') > -1, //IE内核
+                            presto: u.indexOf('Presto') > -1, //opera内核
+                            webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                            gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+                            mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+                            ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                            android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+                            iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+                            iPad: u.indexOf('iPad') > -1, //是否为iPad
+                            webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+                            weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+                            uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+                        };
+                    }()
+                }
+
+            function fontLoaded(){
+                console.log('font loaded');
+                if (document.getElementsByClassName('site-intro-meta')) {
+                    document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+                    document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+                    var postIntroTags = document.getElementsByClassName('post-intro-tags')[0],
+                        postIntroMeat = document.getElementsByClassName('post-intro-meta')[0];
+                        if (postIntroTags) {
+                            postIntroTags.classList.add('post-fade-in');
+                        }
+                        if (postIntroMeat) {
+                            postIntroMeat.classList.add('post-fade-in');
+                        }
+                    }
+                }
+                
+            console.log("userAgent:" + browser.versions.userAgent);
+            // UC不支持跨域，所以直接显示
+            if (browser.versions.uc) {
+                console.log("UCBrowser");
+                fontLoaded();
+            } else {
+                WebFont.load({
+                    custom: {
+                        families: ['Oswald-Regular']
+                    },
+                    loading: function () {  //所有字体开始加载
+                        // console.log('loading');
+                    },
+                    active: function () {  //所有字体已渲染
+                        fontLoaded();
+                    },
+                    inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+                        console.log('inactive: timeout');
+                        fontLoaded();
+                    },
+                    timeout: 7000 // Set the timeout to two seconds
+                });
+            }
+        </script>
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="Spring学习笔记"><a href="#Spring学习笔记" class="headerlink" title="Spring学习笔记"></a>Spring学习笔记</h1><p>使用框架的基本思想是为了将程序的各个部分进行解耦，并解决或避免一些原生编程中的问题</p>
+<h2 id="IOC-控制反转-和DI-依赖注入"><a href="#IOC-控制反转-和DI-依赖注入" class="headerlink" title="IOC(控制反转)和DI(依赖注入)"></a>IOC(控制反转)和DI(依赖注入)</h2><h3 id="配置文件方式"><a href="#配置文件方式" class="headerlink" title="配置文件方式"></a>配置文件方式</h3><p>使用 <code>&lt;bean&gt;</code> 标签配置对象，在 <code>&lt;bean&gt;</code> 的内部使用 <code>&lt;property&gt;</code> 标签将数据注入对象，<br>对象的注入支持复杂对象（例如List、Map等）</p>
+<h3 id="注解方式"><a href="#注解方式" class="headerlink" title="注解方式"></a>注解方式</h3><p>Spring支持使用注解方式来替代配置文件。首先需要在配置文件中写上<br><code>&lt;context:component-scan base-package=&quot;被扫描的文件路径&quot;/&gt;</code> 开启扫描。<br>有两种方式对对象进行创建</p>
+<ul>
+<li><code>@Autowired</code></li>
+<li><code>@Resource(value=&quot;注入对象name&quot;)</code><br> 等效于配置文件中的 <code>&lt;property name=&quot;xxx&quot; ref=&quot;注入对象name&quot;&gt;</code></li>
+</ul>
+<h3 id="混合使用"><a href="#混合使用" class="headerlink" title="混合使用"></a>混合使用</h3><p>配置文件和注解方式是可以混合使用的</p>
+<h2 id="AOP-面向切面编程"><a href="#AOP-面向切面编程" class="headerlink" title="AOP(面向切面编程)"></a>AOP(面向切面编程)</h2><p>即不通过修改源代码实现功能扩展，横向机制，通过代理类实现</p>
+<p>了解代理类之前的猜测理解：<br>通过Spring，创建需要被增强的类的子类，实现父类需要被增强的方法(即父类该方法中的所有功能)，<br>并加入新的增强内容</p>
+<h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>个人理解：目标对象增强前可以理解为一块什么也没的奶油蛋糕，增强是各种口味的巧克力片<br>插入巧克力片的过程，就是织入(配置文件、注解)；插入巧克力片的位置，就是切入点；<br>在没有AOP的做法前，我们要强化一个蛋糕的口味，只能通过重新修改一个蛋糕。<br>而通过AOP的方式，我们只需要给蛋糕增强就可以了。</p>
+<ul>
+<li>连接点：类中可以被增强的方法称为连接点</li>
+<li>Pointcut(切入点)： 在类中实际被增强的方法称为切入点(类中有多个可被增强的方法)</li>
+<li>Advice(通知/增强)： 指增加（扩展）的功能<ul>
+<li>前置通知： 在被增强方法执行之前执行</li>
+<li>后置通知： 在被增强方法执行之后执行</li>
+<li>异常通知： 在被增强方法执行之前执行</li>
+<li>最终通知： 在后置通知之后执行，有点类似finally的意思</li>
+<li>环绕通知： 在方法之前和之后执行</li>
+</ul>
+</li>
+<li>Aspect(切面)： 把增强应用到切入点的过程</li>
+<li>目标对象： 即需要被增强的对象</li>
+<li>Weaving(织入)： 将对象增强功能应用到(织入)目标的过程</li>
+</ul>
+<h3 id="AspectJ"><a href="#AspectJ" class="headerlink" title="AspectJ"></a>AspectJ</h3><p>Spring中的AOP操作由AspectJ实现，有以下两种方案<br><br>注意在IDEA里建的Spring项目，是不会自动下载导入<code>aspectjweaver-1.8.13.jar</code><br>这个依赖的，需要手动导入</p>
+<h4 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h4><p>每次读取xml文件都需要花费较长时间<code>new ClassPathXmlApplicationContext(&quot;xxx.xml&quot;);</code>。<br>所以，通过服务器启动时加载配置文件的方式提升性能。<br>底层实现则是使用监听器和ServletContext对象，Spring已经封装好了监听器，只需要进行配置即可。<br>需要导入Spring-web.jar<br>在web.xml中进行配置：</p>
+<p>`</p>
+<p><listener><br>    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class><br></listener><br>`</p>
+<p>同时此处一般要指定Spring配置文件的位置，否则将会是默认：</p>
+<p>`</p>
+<p><context-param><br>    <param-name>contextConfigLocation</param-name><br>    <!--默认包根路径下--><br>    <param-value>classpath:配置文件.xml</param-value><br></context-param><br>`</p>
+<h4 id="表达式配置切入点-进行增强"><a href="#表达式配置切入点-进行增强" class="headerlink" title="表达式配置切入点 进行增强"></a>表达式配置切入点 进行增强</h4><p>表达式：execution(&lt;访问修饰符&gt;?&lt;返回类型&gt;&lt;方法名&gt;(&lt;参数&gt;)&lt;异常&gt;)</p>
+<p>示例：</p>
+<ul>
+<li>execution(* com.narcissu14.testspring.print(..))<br><br>指代指定路径包名下方法的，任意访问修饰符的方法</li>
+<li>execution(<em> com.narcissu14.testspring.</em>(..))<br><br>指代指定路径包名下，任意访问修饰符的所有方法</li>
+<li>execution(<em> \</em>.*)<br><br>匹配所有方法</li>
+<li>execution(<em> com.narcissu14.testspring.get</em>(..))<br><br>指代指定路径包名下名称以<code>get</code>为前缀的，任意访问修饰符的方法</li>
+</ul>
+<p>步骤：</p>
+<p>首先创建对象及其类(Java的代码部分此处不贴出了)<br><code>&lt;bean id=&quot;aopBook&quot; class=&quot;com.narcissu14.testspring.entity.AopBook&quot;/&gt;
+    &lt;bean id=&quot;aopBookEnhance&quot; class=&quot;com.narcissu14.testspring.entity.AopBookEnhance&quot;/&gt;</code></p>
+<p>对切入点和增强进行配置<br><code>&lt;!--配置AOP操作--&gt;
+    &lt;aop:config&gt;
+        &lt;!--配置切入点--&gt;
+        &lt;aop:pointcut expression=&quot;execution(* com.narcissu14.testspring.entity.AopBook.print())&quot; id=&quot;aopBook-print&quot;/&gt;
+        &lt;!--配置切面，将增强织入--&gt;
+        &lt;aop:aspect ref=&quot;aopBookEnhance&quot;&gt;
+            &lt;aop:before method=&quot;enhanceBefore&quot; pointcut-ref=&quot;aopBook-print&quot;/&gt;
+            &lt;aop:around method=&quot;enhanceAround&quot; pointcut-ref=&quot;aopBook-print&quot;/&gt;
+        &lt;/aop:aspect&gt;
+    &lt;/aop:config&gt;</code></p>
+<h4 id="注解设定切入点-进行增强"><a href="#注解设定切入点-进行增强" class="headerlink" title="注解设定切入点 进行增强"></a>注解设定切入点 进行增强</h4><p>步骤：</p>
+<ol>
+<li>首先创建bean配置，这个同上</li>
+<li>增加<code>&lt;aop:aspectj-autoproxy/&gt;</code>开启自动代理</li>
+<li>在增强类上方加上注解<code>@Aspect</code></li>
+<li>在增强方法上加通知类型的注解，有以下5种：<ul>
+<li>@Before：前置通知</li>
+<li>@AfterReturning：后置通知</li>
+<li>@Around：异常通知</li>
+<li>@AfterThrowing：环绕通知</li>
+<li>@After：最终通知</li>
+</ul>
+</li>
+<li>在通知类型之后加上表达式以指向需要被增强的类<br><br>例如：<br><code>@Before(value = &quot;execution(* com.narcissu14.testspring.entity.AopBook.print())&quot;)</code><h3 id="JDBCTemplate"><a href="#JDBCTemplate" class="headerlink" title="JDBCTemplate"></a>JDBCTemplate</h3>是对JDBC的封装，使用前需要先创建JdbcTemplate对象</li>
+</ol>
+<p>`</p>
+<pre><code>//设置数据库信息
+ DriverManagerDataSource dataSource = new DriverManagerDataSource();
+ dataSource.setDriverClassName(&quot;com.mysql.jdbc.Driver&quot;);
+ dataSource.setUrl(&quot;jdbc:mysql:///spring_test&quot;);
+ dataSource.setUsername(&quot;root&quot;);
+ dataSource.setPassword(&quot;&quot;);
+
+ //创建JdbcTemplate对象，设置数据源
+ JDBC_TEMPLATE = new JdbcTemplate(dataSource);
+</code></pre><p>`<br>之后可以通过JDBC_TEMPLATE 来进行crud操作</p>
+<h4 id="关于查询"><a href="#关于查询" class="headerlink" title="关于查询"></a>关于查询</h4><ul>
+<li><p>查询并获取对象，可以使用<code>JDBC_TEMPLATE.queryForObject(...)</code><br>  该方法返回一个指定类型的对象<br>  其中的”RowMapper”类型参数需要手动进行实现，主要实现</p>
+<ol>
+<li>从结果集中得到数据</li>
+<li>将获得的数据封装为对象后返回</li>
+</ol>
+</li>
+</ul>
+<h3 id="Spring中配置C3P0连接池"><a href="#Spring中配置C3P0连接池" class="headerlink" title="Spring中配置C3P0连接池"></a>Spring中配置C3P0连接池</h3><p>实际上就是利用IOC，使用配置文件的方式创建并注入对象。<br>这里再次注意，默认情况下，创建对象是Singleton，即单例的。<br>例：<br><code>&lt;!--配置C3P0连接池--&gt;
+     &lt;bean id=&quot;c3p0&quot; class=&quot;com.mchange.v2.c3p0.ComboPooledDataSource&quot;&gt;
+         &lt;property name=&quot;driverClass&quot; value=&quot;com.mysql.jdbc.Driver&quot;/&gt;
+         &lt;property name=&quot;jdbcUrl&quot; value=&quot;jdbc:mysql:///spring_test&quot;/&gt;
+         &lt;property name=&quot;user&quot; value=&quot;root&quot;/&gt;
+         &lt;property name=&quot;password&quot; value=&quot;&quot;/&gt;
+     &lt;/bean&gt;</code></p>
+<h3 id="Spring的事务管理"><a href="#Spring的事务管理" class="headerlink" title="Spring的事务管理"></a>Spring的事务管理</h3><ul>
+<li>Spring中事务的两种管理方式：<ul>
+<li>编程式事务管理(一般不用)</li>
+<li>声明式事务管理<ul>
+<li>基于xml配置文件实现</li>
+<li>基于注解方式实现</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Spring事务管理的介绍<ul>
+<li>事务管理器接口<ol>
+<li>Spring对于不同的dao层框架，提供了接口不同的实现类</li>
+<li>首先必须配置事务管理器</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="设计思想"><a href="#设计思想" class="headerlink" title="设计思想"></a>设计思想</h3><ul>
+<li>Service层：业务逻辑层(对业务逻辑进行处理，具体数据crud交给dao)</li>
+<li>Dao层：数据操作层(对数据进行crud)</li>
+</ul>
+
+    </article>
+    <!-- 前后页  -->
+    <ul class="post-pager">
+        
+        
+            <li class="previous">
+                <a href= "/2018/01/13/Struts2Dependencies/" title= IDEA创建Struts2项目时的一个问题及其解决方案 >
+                    <span>Previous Post</span>
+                    <span>IDEA创建Struts2项目时的一个问题及其解决方案</span>
+                </a>
+            </li>
+        
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!--PC版-->
+
+    <!--PC版-->
+
+
+    
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:admin@narcissu14.com" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/Narcissu14" class="iconfont-archer github" target="_blank" title="github"></a>
+            
+        
+    
+        
+    
+        
+            
+                <a href="//space.bilibili.com/1830298" class="iconfont-archer B站" target="_blank" title="B站"></a>
+            
+        
+    
+
+    </div>
+    
+    <!-- 个人博客  -->
+    <div class="copyright">
+        <span id="hexo-power">个人专属</span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">博客-<a href="https://github.com/narcissu14" target="_blank">Narcissu14</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+        <span id="busuanzi_container_site_pv">访问次数: <span id="busuanzi_value_site_pv"></span>
+        </span>
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper">
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Spring学习笔记"><span class="toc-number">1.</span> <span class="toc-text">Spring学习笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#IOC-控制反转-和DI-依赖注入"><span class="toc-number">1.1.</span> <span class="toc-text">IOC(控制反转)和DI(依赖注入)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#配置文件方式"><span class="toc-number">1.1.1.</span> <span class="toc-text">配置文件方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注解方式"><span class="toc-number">1.1.2.</span> <span class="toc-text">注解方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#混合使用"><span class="toc-number">1.1.3.</span> <span class="toc-text">混合使用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AOP-面向切面编程"><span class="toc-number">1.2.</span> <span class="toc-text">AOP(面向切面编程)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#概念"><span class="toc-number">1.2.1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AspectJ"><span class="toc-number">1.2.2.</span> <span class="toc-text">AspectJ</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#优化"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">优化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#表达式配置切入点-进行增强"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">表达式配置切入点 进行增强</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注解设定切入点-进行增强"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">注解设定切入点 进行增强</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JDBCTemplate"><span class="toc-number">1.2.3.</span> <span class="toc-text">JDBCTemplate</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#关于查询"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">关于查询</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring中配置C3P0连接池"><span class="toc-number">1.2.4.</span> <span class="toc-text">Spring中配置C3P0连接池</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring的事务管理"><span class="toc-number">1.2.5.</span> <span class="toc-text">Spring的事务管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设计思想"><span class="toc-number">1.2.6.</span> <span class="toc-text">设计思想</span></a></li></ol></li></ol></li></ol>
+    </div>
+    
+    <div class="back-top">&#xe639;</div>
+    <div class="sidebar">
+    <div class="sidebar-header sidebar-header-show-archive">
+        <div class="sidebar-category">
+            <span class="sidebar-archive-link"><span class="iconfont-archer">&#xe67d;</span>文章</span>
+            <span class="sidebar-tags-link"><span class="iconfont-archer">&#xe610;</span>标签</span>
+        </div>
+    </div>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-archive">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-archive"> 总计: 2 </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2018 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/13</span><a class="archive-post-title" href= "/2018/01/13/Struts2Dependencies/" >IDEA创建Struts2项目时的一个问题及其解决方案</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> Invalid date </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2018/03/09/SpringLearningNote/" >[Untitled Post]</a>
+        </li>
+    
+    </div>
+  </div>
+        <div class="sidebar-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name"><a href= "#">Struts2</a></span>
+    
+    </div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br/>
+    1、请确保node版本大于6.2<br/>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: false
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tag-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var jsInfo = {
+        root: '/'
+    }
+</script>
+    <!-- 不蒜子  -->
+    
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ统计  -->
+    
+    </div>
+    </body>
+</html>
+
+
